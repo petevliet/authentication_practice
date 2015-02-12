@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
+  root 'sessions#new'
+
   resources :secrets
 
   get '/login' => 'sessions#new'
   post '/login' => 'secrets#create'
-  delete '/logout' => 'sessions#destroy' 
+  delete '/logout' => 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
